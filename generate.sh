@@ -42,8 +42,9 @@ cat << EOF >> $OUTPUT
 EOF
 for address in $WWW_ADDRESSES
 do
+address_short=$(echo $address | cut -d '/' -f3)
 cat << EOF >> $OUTPUT
-       <p> <a href="$address" target="_blank">$address</a> - Проверен на $(env TZ=Europe/Sofia date '+%H:%M %x %Z') </p>
+       <p> <a href="$address_short" target="_blank">$address</a> <br> [Проверен на $(env TZ=Europe/Sofia date '+%H:%M %x %Z')] </p>
 EOF
 done
 cat << EOF >> $OUTPUT
@@ -59,8 +60,9 @@ cat << EOF >> $OUTPUT
 EOF
 for address in $ONION_ADDRESSES
 do
+address_short=$(echo $address | cut -d '/' -f3)
 cat << EOF >> $OUTPUT
-       <p> <a href="$address" target="_blank">$address</a> - Проверен на $(env TZ=Europe/Sofia date '+%H:%M %x %Z') </p>
+       <p> <a href="$address_short" target="_blank">$address</a> <br> [Проверен на $(env TZ=Europe/Sofia date '+%H:%M %x %Z')] </p>
 EOF
 done
 cat << EOF >> $OUTPUT
@@ -98,4 +100,3 @@ git commit -m "Update $RANDOM" --quiet
 git push --dry-run --quiet && git push --quiet -u --no-progress > /dev/null 2>&1
 
 exit $?
-
