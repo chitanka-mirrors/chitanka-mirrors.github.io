@@ -44,7 +44,7 @@ for address in $WWW_ADDRESSES
 do
 address_short=$(echo $address | cut -d '/' -f3)
 cat << EOF >> $OUTPUT
-       <p> <a href="$address_short" target="_blank">$address</a> <br> [Проверен на $(env TZ=Europe/Sofia date '+%H:%M %x %Z')] </p>
+       <p> <a href="$address" target="_blank">$address_short</a> <br> [Проверен на $(env TZ=Europe/Sofia date '+%H:%M %x %Z')] </p>
 EOF
 done
 cat << EOF >> $OUTPUT
@@ -62,7 +62,7 @@ for address in $ONION_ADDRESSES
 do
 address_short=$(echo $address | cut -d '/' -f3)
 cat << EOF >> $OUTPUT
-       <p> <a href="$address_short" target="_blank">$address</a> <br> [Проверен на $(env TZ=Europe/Sofia date '+%H:%M %x %Z')] </p>
+       <p> <a href="$address" target="_blank">$address_short</a> <br> [Проверен на $(env TZ=Europe/Sofia date '+%H:%M %x %Z')] </p>
 EOF
 done
 cat << EOF >> $OUTPUT
