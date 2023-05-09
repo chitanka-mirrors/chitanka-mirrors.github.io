@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-WWW_CURL="/usr/bin/curl --connect-timeout 5 --max-time 10 --retry 5 --retry-delay 0 --retry-max-time 40 -L -k"
-ONION_CURL="/usr/bin/torsocks /usr/bin/curl --connect-timeout 5 --max-time 10 --retry 5 --retry-delay 0 --retry-max-time 40 -L -k"
+WWW_CURL="/usr/bin/curl --connect-timeout 5 --max-time 10 --retry 5 --retry-delay 10 --retry-max-time 240 -L -k"
+ONION_CURL="/usr/bin/torsocks /usr/bin/curl --connect-timeout 5 --max-time 10 --retry 5 --retry-delay 10 --retry-max-time 240 -L -k"
 OUTPUT="index.html"
 HEAD="head.html"
 BOTTOM="bottom.html"
